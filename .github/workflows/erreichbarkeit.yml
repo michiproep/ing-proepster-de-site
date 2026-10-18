@@ -1,0 +1,90 @@
+name: Erreichbarkeit
+
+on:
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+env:
+  DOMAIN: ing-proepster.de
+
+jobs:
+  pruefen:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Erreichbarkeit und DNS prüfen
+        run: |
+          set -u
+          : > problems.md
+          ipv4() { grep -E '^[0-9]+(\.[0-9]+){3}$' | sort -u; }
+
+          # Aktuelle GitHub-Pages-IPs (IPv4)
+          curl -fsS https://api.github.com/meta | jq -r '.pages[]' \
+            | grep -E '^[0-9.]+/32$' | sed 's#/32##' | sort -u > soll.txt
+          if [ ! -s soll.txt ]; then
+            echo "- Die GitHub-Pages-IPs konnten nicht von api.github.com/meta gelesen werden." >> problems.md
+          fi
+
+          # DNS-Abgleich
+          for host in "$DOMAIN" "www.$DOMAIN"; do
+            cname=$(dig +short CNAME "$host" | head -n1)
+            if [ -n "$cname" ]; then
+              echo "$host ist ein CNAME auf $cname, IP-Abgleich entfällt."
+              continue
+            fi
+            dig +short A "$host" | ipv4 > "ist-$host.txt"
+            if [ -s soll.txt ] && ! diff -q soll.txt "ist-$host.txt" > /dev/null; then
+              {
+                echo "- **$host**: A-Records weichen von GitHub Pages ab."
+                echo "  - Fehlen im DNS: $(comm -23 soll.txt "ist-$host.txt" | paste -sd' ' -)"
+                echo "  - Veraltet oder unbekannt im DNS: $(comm -13 soll.txt "ist-$host.txt" | paste -sd' ' -)"
+              } >> problems.md
+            fi
+          done
+
+          # HTTP-Erreichbarkeit
+          for url in "https://$DOMAIN" "https://www.$DOMAIN"; do
+            code=$(curl -s -o /dev/null -L --max-time 30 -w '%{http_code}' "$url" || true)
+            if [ "$code" != "200" ]; then
+              echo "- **$url** antwortet mit HTTP $code (erwartet 200)." >> problems.md
+            fi
+          done
+
+          {
+            echo "Neue GitHub-Pages-IPs (api.github.com/meta):"
+            echo
+            sed 's/^/- `/; s/$/`/' soll.txt
+          } > ips.md
+
+      - name: Issue anlegen, aktualisieren oder schließen
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh label create erreichbarkeit --color D93F0B --description "Automatische Erreichbarkeitsprüfung" --force
+          offen=$(gh issue list --label erreichbarkeit --state open --json number --jq '.[0].number // empty')
+
+          if [ -s problems.md ]; then
+            {
+              echo "Die tägliche Prüfung von \`$DOMAIN\` hat Probleme gefunden:"
+              echo
+              cat problems.md
+              echo
+              cat ips.md
+              echo
+              echo "DNS bei IONOS entsprechend anpassen. Lauf: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            } > body.md
+            if [ -n "$offen" ]; then
+              gh issue comment "$offen" --body-file body.md
+            else
+              gh issue create --label erreichbarkeit \
+                --title "$DOMAIN: Erreichbarkeit oder DNS prüfen" --body-file body.md
+            fi
+            exit 1
+          elif [ -n "$offen" ]; then
+            gh issue close "$offen" --comment "Wieder alles in Ordnung, Issue automatisch geschlossen."
+          fi
