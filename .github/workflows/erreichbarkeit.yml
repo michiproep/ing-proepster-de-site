@@ -37,11 +37,12 @@ jobs:
               continue
             fi
             dig +short A "$host" | ipv4 > "ist-$host.txt"
-            if [ -s soll.txt ] && ! diff -q soll.txt "ist-$host.txt" > /dev/null; then
+            veraltet=$(comm -13 soll.txt "ist-$host.txt" | paste -sd' ' -)
+            if [ -s soll.txt ] && { [ -n "$veraltet" ] || [ ! -s "ist-$host.txt" ]; }; then
               {
-                echo "- **$host**: A-Records weichen von GitHub Pages ab."
-                echo "  - Fehlen im DNS: $(comm -23 soll.txt "ist-$host.txt" | paste -sd' ' -)"
-                echo "  - Veraltet oder unbekannt im DNS: $(comm -13 soll.txt "ist-$host.txt" | paste -sd' ' -)"
+                echo "- **$host**: A-Records passen nicht (mehr) zu GitHub Pages."
+                echo "  - Aktuell im DNS: $(paste -sd' ' "ist-$host.txt")"
+                echo "  - Nicht in der GitHub-Liste: ${veraltet:-keine}"
               } >> problems.md
             fi
           done
