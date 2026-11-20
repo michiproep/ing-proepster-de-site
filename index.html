@@ -15,22 +15,62 @@
   <link rel="alternate" hreflang="de" href="https://ing-proepster.de/de/">
   <link rel="alternate" hreflang="x-default" href="https://ing-proepster.de/">
   <link rel="icon" href="assets/images/logotext-96x42.jpg" type="image/jpeg">
+  <!-- Google Search Console: paste the content value from "HTML tag" verification here and remove the comment markers.
+  <meta name="google-site-verification" content="PASTE_TOKEN_HERE"> -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Ingenieurbüro Michael Pröpster",
-    "alternateName": ["IMP", "Engineering Services M. Proepster"],
-    "description": "Custom software development for small and medium-sized businesses",
-    "email": "info@ing-proepster.de",
-    "telephone": "+49 171 8393332",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Kornstr. 8",
-      "postalCode": "90602",
-      "addressLocality": "Schwarzach",
-      "addressCountry": "DE"
-    }
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://ing-proepster.de/#organization",
+        "name": "Ingenieurbüro Michael Pröpster",
+        "alternateName": ["IMP", "Engineering Services M. Proepster"],
+        "url": "https://ing-proepster.de/",
+        "logo": "https://ing-proepster.de/assets/images/logotext-96x42.jpg",
+        "image": "https://ing-proepster.de/assets/images/logotext-96x42.jpg",
+        "description": "Custom software development for small and medium-sized businesses",
+        "email": "info@ing-proepster.de",
+        "telephone": "+49 171 8393332",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Kornstr. 8",
+          "postalCode": "90602",
+          "addressLocality": "Schwarzach",
+          "addressRegion": "Bayern",
+          "addressCountry": "DE"
+        },
+        "areaServed": ["DE", "AT", "CH", "EU"],
+        "knowsAbout": ["Custom software development", "E-invoicing XRechnung ZUGFeRD", "Legacy system modernization", "Single sign-on", "OpenID Connect", "Microsoft Azure", ".NET"],
+        "makesOffer": { "@type": "Offer", "itemOffered": { "@id": "https://ing-proepster.de/#theidp" } }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://ing-proepster.de/#theidp",
+        "name": "TheIdP",
+        "url": "https://ing-proepster.de/#identity",
+        "applicationCategory": "SecurityApplication",
+        "applicationSubCategory": "Identity provider / Customer identity and access management (CIAM)",
+        "operatingSystem": "Docker, Kubernetes, Azure, AWS, Google Cloud, on-premises",
+        "description": "Enterprise identity provider and Azure AD B2C alternative: OpenID Connect and OAuth 2.0, B2C-compatible claims, token exchange between APIs (RFC 8693), passkeys and MFA, federation with Entra ID and other OIDC providers, self-hosted with multi-site failover.",
+        "featureList": [
+          "Migration path from Azure AD B2C without rewriting applications",
+          "Token exchange between APIs (RFC 8693) with delegation chains",
+          "B2B federation per customer via home realm discovery",
+          "B2C local accounts with passkeys, authenticator app and email code",
+          "Login flows as code instead of custom-policy XML",
+          "Self-hosting with second-site failover across cloud providers",
+          "Audited, time-limited support impersonation",
+          "Sign-in diagnostics with reason codes and correlation IDs",
+          "Built-in MCP server for AI assistants"
+        ],
+        "softwareHelp": { "@type": "CreativeWork", "url": "https://ing-proepster.de/#contact" },
+        "offers": { "@type": "Offer", "availability": "https://schema.org/PreOrder", "description": "In development – pilot customers welcome" },
+        "author": { "@id": "https://ing-proepster.de/#organization" },
+        "provider": { "@id": "https://ing-proepster.de/#organization" },
+        "inLanguage": ["en", "de"]
+      }
+    ]
   }
   </script>
   <link rel="stylesheet" href="assets/css/site.css">

@@ -15,22 +15,62 @@
   <link rel="alternate" hreflang="en" href="https://ing-proepster.de/">
   <link rel="alternate" hreflang="x-default" href="https://ing-proepster.de/">
   <link rel="icon" href="../assets/images/logotext-96x42.jpg" type="image/jpeg">
+  <!-- Google Search Console: paste the content value from "HTML tag" verification here and remove the comment markers.
+  <meta name="google-site-verification" content="PASTE_TOKEN_HERE"> -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Ingenieurbüro Michael Pröpster",
-    "alternateName": "IMP",
-    "description": "Individuelle Softwareentwicklung für kleine und mittelständische Unternehmen",
-    "email": "info@ing-proepster.de",
-    "telephone": "+49 171 8393332",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Kornstr. 8",
-      "postalCode": "90602",
-      "addressLocality": "Schwarzach",
-      "addressCountry": "DE"
-    }
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://ing-proepster.de/#organization",
+        "name": "Ingenieurbüro Michael Pröpster",
+        "alternateName": ["IMP", "Engineering Services M. Proepster"],
+        "url": "https://ing-proepster.de/de/",
+        "logo": "https://ing-proepster.de/assets/images/logotext-96x42.jpg",
+        "image": "https://ing-proepster.de/assets/images/logotext-96x42.jpg",
+        "description": "Individuelle Softwareentwicklung für kleine und mittelständische Unternehmen",
+        "email": "info@ing-proepster.de",
+        "telephone": "+49 171 8393332",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Kornstr. 8",
+          "postalCode": "90602",
+          "addressLocality": "Schwarzach",
+          "addressRegion": "Bayern",
+          "addressCountry": "DE"
+        },
+        "areaServed": ["DE", "AT", "CH", "EU"],
+        "knowsAbout": ["Individuelle Softwareentwicklung", "E-Rechnung XRechnung ZUGFeRD", "Modernisierung von Altsystemen", "Single Sign-On", "OpenID Connect", "Microsoft Azure", ".NET", "Energiemanagement", "Heimautomatisierung"],
+        "makesOffer": { "@type": "Offer", "itemOffered": { "@id": "https://ing-proepster.de/#theidp" } }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://ing-proepster.de/#theidp",
+        "name": "TheIdP",
+        "url": "https://ing-proepster.de/de/#identitaet",
+        "applicationCategory": "SecurityApplication",
+        "applicationSubCategory": "Identity Provider / Customer Identity and Access Management (CIAM)",
+        "operatingSystem": "Docker, Kubernetes, Azure, AWS, Google Cloud, On-Premises",
+        "description": "Enterprise Identity Provider und Alternative zu Azure AD B2C: OpenID Connect und OAuth 2.0, B2C-kompatible Claims, Token Exchange zwischen APIs (RFC 8693), Passkeys und MFA, Föderation mit Entra ID und anderen OIDC-Providern, selbst gehostet mit Failover über mehrere Standorte.",
+        "featureList": [
+          "Migration von Azure AD B2C ohne Umbau der Anwendungen",
+          "Token Exchange zwischen APIs (RFC 8693) mit Delegationsketten",
+          "B2B-Föderation pro Kunde über Home Realm Discovery",
+          "B2C-Konten mit Passkeys, Authenticator-App und E-Mail-Code",
+          "Login-Flows als Code statt Custom-Policy-XML",
+          "Self-Hosting mit Failover auf einen zweiten Standort, auch bei einem anderen Cloud-Anbieter",
+          "Auditierte, zeitlich begrenzte Support-Impersonation",
+          "Anmeldediagnose mit Reason Codes und Correlation IDs",
+          "Eingebauter MCP-Server für KI-Assistenten"
+        ],
+        "softwareHelp": { "@type": "CreativeWork", "url": "https://ing-proepster.de/de/#kontakt" },
+        "offers": { "@type": "Offer", "availability": "https://schema.org/PreOrder", "description": "In Entwicklung – Pilotkunden willkommen" },
+        "author": { "@id": "https://ing-proepster.de/#organization" },
+        "provider": { "@id": "https://ing-proepster.de/#organization" },
+        "inLanguage": ["de", "en"]
+      }
+    ]
   }
   </script>
   <link rel="stylesheet" href="../assets/css/site.css">
