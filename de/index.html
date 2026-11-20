@@ -48,6 +48,7 @@
       <nav aria-label="Hauptnavigation">
         <ul>
           <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#identitaet">Identity Provider</a></li>
           <li><a href="#ki">KI &amp; Automatisierung</a></li>
           <li><a href="#ablauf">Ablauf</a></li>
           <li><a href="#zuhause">Für Privatkunden</a></li>
@@ -136,7 +137,7 @@
           <h3>Sichere Anmeldung und Cloud</h3>
           <p>Ein Login für alle Anwendungen, sicherer Zugang für Mitarbeitende, Kunden und Partner – auf Basis etablierter
             Standards und der Microsoft-Cloud.</p>
-          <div class="tags">Single Sign-On · OpenID Connect · Entra ID / Azure AD B2C · Azure</div>
+          <div class="tags">Single Sign-On · OpenID Connect · Entra ID / Azure AD B2C · Azure · <a href="#identitaet">Eigener Identity Provider →</a></div>
         </article>
 
         <article class="card">
@@ -162,6 +163,121 @@
       <div class="note">
         <p><strong>Gut zu wissen:</strong> Seit 2025 müssen Unternehmen E-Rechnungen empfangen können. Ab 2027 müssen größere
           Betriebe ihre Rechnungen auch als E-Rechnung ausstellen, ab 2028 alle. Ein früher Umstieg erspart Hektik zum Stichtag.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="identitaet" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Produkt · Identity Provider</span>
+        <h2>Weg von Azure AD B2C – und Entra External ID passt nicht?</h2>
+        <p class="lead">Azure AD B2C wird an Neukunden nicht mehr verkauft, und der Nachfolger deckt nicht alles ab, was
+          Custom Policies möglich gemacht haben. <strong>TheIdP</strong> ist ein Identity Provider für Unternehmen, der dort
+          weitermacht, wo B2C aufhört – vertraut für Ihre Anwendungen, erweitert, wo B2C schon immer zu eng war, und
+          betrieben, wo Sie es möchten.</p>
+        <span class="status-pill">In Entwicklung · Pilotkunden willkommen</span>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3l4 4-4 4"/><path d="M3 7h18"/><path d="M7 21l-4-4 4-4"/><path d="M21 17H3"/></svg>
+          </div>
+          <h3>Umstieg ohne Umbau Ihrer Anwendungen</h3>
+          <p>Login-Flows werden wie B2C-Policies über die Authority-URL gewählt, die Claims sind B2C-kompatibel, App-Registrierungen
+            funktionieren wie in Entra ID. Für die meisten Anwendungen ist der Wechsel eine neue Authority – kein neues Projekt.</p>
+          <div class="tags">B2C-kompatible Claims · App-Registrierungen wie Entra ID · OpenID Connect</div>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="6" height="6" rx="1"/><rect x="16" y="9" width="6" height="6" rx="1"/><path d="M8 12h8M13 9l3 3-3 3"/></svg>
+          </div>
+          <h3>Token Exchange zwischen APIs</h3>
+          <p>Eine API tauscht das eingehende Benutzer-Token gegen ein Token für die nächste API – nur zwischen freigegebenen
+            Paaren, die komplette Aufrufkette steht im Token. Was B2C nie konnte, ist eingebaut.</p>
+          <div class="tags">RFC 8693 · Delegationsketten · Tokens mit genau einer Zielgruppe</div>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
+          </div>
+          <h3>B2B und B2C in einem System</h3>
+          <p>Geschäftskunden melden sich mit ihrem eigenen Entra ID oder einem beliebigen OIDC-Anbieter an – automatisch über
+            die E-Mail-Domain gefunden und sicher verknüpft. Endkunden nutzen lokale Konten mit Passkeys, Authenticator-App
+            oder E-Mail-Code.</p>
+          <div class="tags">Home Realm Discovery · Föderation je Kunde · Passkeys · MFA</div>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+          </div>
+          <h3>Anpassbar – in Code statt XML</h3>
+          <p>Login-Flows sind echter Code statt Custom-Policy-XML – versioniert, getestet und ausgeliefert wie jede Software. Branding und Kampagnen, Übersetzungen,
+            E-Mail-Vorlagen und Claim-Mappings pflegen Sie in der Konsole; Erweiterungspunkte erlauben Betrugsprüfungen oder
+            Step-up-Regeln.</p>
+          <div class="tags">Flows als Code · Kampagnen · Erweiterungspunkte</div>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 6.5h.01M6 17.5h.01M11 6.5h7M11 17.5h7"/></svg>
+          </div>
+          <h3>Ausfallsicher und selbst betrieben</h3>
+          <p>Betreiben Sie ihn selbst – im eigenen Rechenzentrum oder in jeder Cloud. Ein zweiter Standort, auch bei einem
+            anderen Cloud-Anbieter, bleibt synchron; umgeschaltet wird per DNS und einem Klick, die Benutzer arbeiten weiter.</p>
+          <div class="tags">Zwei Standorte · Azure, AWS, Google Cloud · eigenes Rechenzentrum · kein Lock-in</div>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M16 11l2 2 4-4"/></svg>
+          </div>
+          <h3>Support sieht, was der Kunde sieht</h3>
+          <p>Berechtigte Mitarbeitende melden sich im Namen eines Kundenbenutzers bei einer Anwendung an – nur wo erlaubt,
+            zeitlich begrenzt, im Token klar gekennzeichnet und lückenlos protokolliert.</p>
+          <div class="tags">Impersonation · zeitlich begrenzt · Audit-Trail</div>
+        </article>
+      </div>
+
+      <div class="idp-more">
+        <div class="ki-box chat" aria-label="Beispiel: den Identity Provider über einen KI-Assistenten fragen">
+          <span class="eyebrow">Fragen Sie Ihren Identity Provider</span>
+          <p class="chat-q">„Warum konnte sich jane.doe@kunde.example heute früh nicht anmelden?“</p>
+          <p class="chat-a">Sie wurde zur Anmeldung ihres Unternehmens geleitet (erkannt an der E-Mail-Domain). Der
+            Identity Provider des Kunden meldete um 08:14 einen Fehler – Reason Code <code>FEDERATION_ERROR</code>. Der
+            Health-Check zeigt seit gestern ein abgelaufenes Zertifikat. Nächster Schritt: die IT des Kunden um Erneuerung
+            bitten; ein Testlink für sie liegt bereit.</p>
+          <p class="chat-note">Eingebauter MCP-Server: Der Support fragt in Alltagssprache aus einem KI-Assistenten wie Claude –
+            nur lesend, beschränkt auf die eigene Rolle, jeder Aufruf protokolliert.</p>
+        </div>
+        <div>
+          <h3>Außerdem an Bord</h3>
+          <ul class="checks">
+            <li><strong>Anmelde-Diagnose</strong><span>Jede Anmeldung hinterlässt eine Spur mit Reason Codes; die Fehlerseite
+              zeigt eine Korrelations-ID, damit der Support die Ursache in Sekunden findet.</span></li>
+            <li><strong>Bereit für KI-Agenten</strong><span>Ihre Teams können eigene MCP-Server veröffentlichen – dynamische
+              Client-Registrierung und Resource Indicators gehören zum Standard.</span></li>
+            <li><strong>Self-Service für Entwickler</strong><span>Teams registrieren Apps aus Vorlagen, rotieren Secrets,
+              bekommen Quickstart-Code und Test-Tokens – Admins braucht es nur noch für Ausnahmen.</span></li>
+            <li><strong>Testautomatisierung eingebaut</strong><span>End-to-End-Tests melden markierte Testbenutzer ohne
+              Login-Maske an – in Produktion sicher abgeschaltet.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <ul class="chips" aria-label="Standards">
+        <li>OpenID Connect</li><li>OAuth Security Best Practice</li><li>PKCE</li><li>PAR</li><li>DPoP</li>
+        <li>Token Exchange</li><li>Passkeys</li><li>MCP</li><li>Admin-API</li>
+        <li>Ausgelegt für 500.000+ Benutzer</li>
+      </ul>
+
+      <div class="note">
+        <p><strong>Steht bei Ihnen eine B2C-Migration an?</strong> Gerne zeigen wir Ihnen TheIdP in einer Live-Demo und wir
+          prüfen gemeinsam, ob er zu Ihren Anwendungen passt – <a href="#kontakt">sprechen Sie uns an</a>.</p>
       </div>
     </div>
   </section>
@@ -258,12 +374,12 @@
     <div class="wrap split">
       <div>
         <span class="eyebrow">Ihre Vorteile</span>
-        <h2>Ein Ansprechpartner, der Ihr Projekt kennt</h2>
+        <h2>Ansprechpartner, die Ihr Projekt kennen</h2>
         <p class="lead">Als inhabergeführtes Ingenieurbüro aus Schwarzach bei Nürnberg verbindet IMP langjährige Erfahrung in der
           professionellen Softwareentwicklung mit kurzen Wegen und persönlicher Betreuung – für Unternehmen wie für Privatkunden.</p>
       </div>
       <ul class="checks">
-        <li><strong>Persönlich und direkt</strong><span>Kein Callcenter, keine wechselnden Projektleiter – Sie sprechen immer mit dem Entwickler selbst.</span></li>
+        <li><strong>Persönlich und direkt</strong><span>Kein Callcenter, keine wechselnden Projektleiter – Sie sprechen immer direkt mit denen, die Ihre Software entwickeln.</span></li>
         <li><strong>Lösungen nach Maß</strong><span>Software, die sich an Ihren Abläufen orientiert – nicht umgekehrt.</span></li>
         <li><strong>Ingenieursmäßige Qualität</strong><span>Automatisierte Tests, Versionsverwaltung und Dokumentation sorgen für Software, die zuverlässig läuft und wartbar bleibt.</span></li>
         <li><strong>Moderne, bewährte Technik</strong><span>Microsoft .NET, Azure und offene Standards – zukunftssicher und breit unterstützt.</span></li>

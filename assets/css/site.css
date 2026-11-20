@@ -208,6 +208,25 @@ section.dark .checks span { color: #b7c0d1; }
 }
 .shot figcaption { margin-top: 14px; font-size: .9rem; color: var(--muted); text-align: center; }
 
+/* Identity Provider */
+.status-pill {
+  display: inline-block; margin-top: 6px; padding: 4px 14px; border-radius: 999px;
+  background: #fff; border: 1px solid var(--blue-light); color: var(--blue); font-size: .85rem; font-weight: 600;
+}
+.idp-more { display: grid; gap: 40px; grid-template-columns: 1.1fr 1fr; align-items: start; margin-top: 48px; }
+@media (max-width: 860px) { .idp-more { grid-template-columns: 1fr; gap: 28px; } }
+.chat { background: #141a2b; color: #e6eaf2; }
+.chat .eyebrow { color: #8fb2f5; }
+.chat-q {
+  margin-left: auto; max-width: 90%; padding: 12px 16px; border-radius: 14px 14px 4px 14px;
+  background: var(--blue); color: #fff !important; font-weight: 500;
+}
+.chat-a { max-width: 95%; padding: 12px 16px; border-radius: 14px 14px 14px 4px; background: #1f2740; border: 1px solid #2e3858; }
+.chat code { background: rgba(143,178,245,.16); color: #cfe0ff; padding: 1px 6px; border-radius: 4px; font-size: .9em; }
+.chat .chat-note { margin: 0; font-size: .88rem; color: #8a96ad; }
+.chips { list-style: none; margin: 40px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.chips li { padding: 5px 13px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font-size: .85rem; color: var(--ink); }
+
 /* Kontakt */
 .contact {
   background: linear-gradient(135deg, #1d4fb0, var(--blue-light));

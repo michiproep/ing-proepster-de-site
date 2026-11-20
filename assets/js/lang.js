@@ -20,6 +20,7 @@
   var ids = [
     ['top', 'top'],
     ['services', 'leistungen'],
+    ['identity', 'identitaet'],
     ['ai', 'ki'],
     ['process', 'ablauf'],
     ['benefits', 'vorteile'],

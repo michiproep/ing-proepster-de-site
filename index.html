@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>IMP Ingenieurbüro Michael Pröpster – Software for Small and Medium-Sized Businesses</title>
-  <meta name="description" content="Custom software for small and medium-sized businesses: replacing Excel, e-invoicing (XRechnung/ZUGFeRD), modernizing legacy systems, single sign-on and Azure. Ingenieurbüro Michael Pröpster, Schwarzach near Nuremberg, Germany.">
-  <meta property="og:title" content="IMP Ingenieurbüro Michael Pröpster">
+  <title>IMP Engineering Services M. Proepster – Software for Small and Medium-Sized Businesses</title>
+  <meta name="description" content="Custom software for small and medium-sized businesses: replacing Excel, e-invoicing (XRechnung/ZUGFeRD), modernizing legacy systems, single sign-on and Azure. IMP Engineering Services M. Proepster, Schwarzach near Nuremberg, Germany.">
+  <meta property="og:title" content="IMP Engineering Services M. Proepster">
   <meta property="og:description" content="Software that takes the load off your business – custom solutions for SMEs.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
@@ -20,7 +20,7 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Ingenieurbüro Michael Pröpster",
-    "alternateName": "IMP",
+    "alternateName": ["IMP", "Engineering Services M. Proepster"],
     "description": "Custom software development for small and medium-sized businesses",
     "email": "info@ing-proepster.de",
     "telephone": "+49 171 8393332",
@@ -42,12 +42,13 @@
   <div class="wrap nav">
     <a class="brand" href="#top">
       <img src="assets/images/logotext-96x42.jpg" alt="IMP logo" width="96" height="42">
-      <span>Ingenieurbüro Michael Pröpster</span>
+      <span>Engineering Services M. Proepster</span>
     </a>
     <div class="nav-right">
       <nav aria-label="Main navigation">
         <ul>
           <li><a href="#services">Services</a></li>
+          <li><a href="#identity">Identity Provider</a></li>
           <li><a href="#ai">AI &amp; Automation</a></li>
           <li><a href="#process">Process</a></li>
           <li><a class="btn" href="#contact">Contact</a></li>
@@ -78,7 +79,7 @@
       <h1>Software that takes the load off your business.</h1>
       <p class="lead">
         Too much manual work in Excel, industry software that no longer fits, or new obligations such as e-invoicing?
-        Ingenieurbüro Michael Pröpster develops tailor-made solutions that fit your workflows exactly –
+        IMP Engineering Services develops tailor-made solutions that fit your workflows exactly –
         explained in plain language, implemented cleanly and supported for the long term.
       </p>
       <div class="actions">
@@ -135,7 +136,7 @@
           <h3>Secure sign-in and cloud</h3>
           <p>One login for all applications, secure access for employees, customers and partners – based on established
             standards and the Microsoft cloud.</p>
-          <div class="tags">Single Sign-On · OpenID Connect · Entra ID / Azure AD B2C · Azure</div>
+          <div class="tags">Single Sign-On · OpenID Connect · Entra ID / Azure AD B2C · Azure · <a href="#identity">Own identity provider →</a></div>
         </article>
 
         <article class="card">
@@ -162,6 +163,117 @@
         <p><strong>Good to know:</strong> Since 2025, businesses in Germany must be able to receive e-invoices. From 2027, larger
           companies must also issue their invoices as e-invoices, and from 2028 all companies. Switching early saves you a
           last-minute scramble.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="identity" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Product · Identity Provider</span>
+        <h2>Moving off Azure AD B2C – and Entra External ID doesn't fit?</h2>
+        <p class="lead">Azure AD B2C is no longer sold to new customers, and its successor does not cover everything that
+          custom policies made possible. <strong>TheIdP</strong> is an enterprise identity provider that takes over
+          where B2C leaves off – familiar for your apps, extended where B2C was always too tight, and run wherever you want.</p>
+        <span class="status-pill">In development · pilot customers welcome</span>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3l4 4-4 4"/><path d="M3 7h18"/><path d="M7 21l-4-4 4-4"/><path d="M21 17H3"/></svg>
+          </div>
+          <h3>Migration without rewriting your apps</h3>
+          <p>Login flows selected by authority URL like B2C policies, B2C-compatible claims, app registrations in the
+            style of Entra ID. For most applications the switch is a new authority – not a new project.</p>
+          <div class="tags">B2C-compatible claims · Entra-style app registrations · OpenID Connect</div>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="6" height="6" rx="1"/><rect x="16" y="9" width="6" height="6" rx="1"/><path d="M8 12h8M13 9l3 3-3 3"/></svg>
+          </div>
+          <h3>Token exchange between APIs</h3>
+          <p>An API exchanges the incoming user token for a token for the next API – only between permitted pairs, with
+            the full call chain recorded in the token. What B2C never offered is built in.</p>
+          <div class="tags">RFC 8693 · delegation chains · single-audience tokens</div>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
+          </div>
+          <h3>B2B and B2C in one system</h3>
+          <p>Business customers sign in with their own Entra ID or any OIDC provider, found automatically by email domain
+            and linked safely. Consumers use local accounts with passkeys, authenticator app or email code.</p>
+          <div class="tags">Home realm discovery · federation per customer · passkeys · MFA</div>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+          </div>
+          <h3>Adaptable – in code, not in XML</h3>
+          <p>Login flows are real code instead of custom-policy XML – versioned, tested and released like any software. Branding and campaigns, translations, email
+            templates and claim mappings are maintained in the console; hooks allow fraud checks or step-up rules.</p>
+          <div class="tags">Flows as code · campaigns · extension hooks</div>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 6.5h.01M6 17.5h.01M11 6.5h7M11 17.5h7"/></svg>
+          </div>
+          <h3>Failover and self-hosting</h3>
+          <p>Run it yourself – in your data centre or any cloud. A second site, even with another cloud provider, stays in
+            sync; switching over is a DNS change and one click, and users keep working.</p>
+          <div class="tags">Two sites · Azure, AWS, Google Cloud · on-premises · no lock-in</div>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M16 11l2 2 4-4"/></svg>
+          </div>
+          <h3>Support that sees what the customer sees</h3>
+          <p>Authorised staff can sign in to an application on behalf of a customer user – only where permitted,
+            time-limited, clearly marked in the token and fully audited.</p>
+          <div class="tags">Impersonation · time-limited · audit trail</div>
+        </article>
+      </div>
+
+      <div class="idp-more">
+        <div class="ki-box chat" aria-label="Example: asking the identity provider through an AI assistant">
+          <span class="eyebrow">Ask your identity provider</span>
+          <p class="chat-q">“Why couldn't jane.doe@customer.example sign in this morning?”</p>
+          <p class="chat-a">She was sent to her company's sign-in (found by email domain). The company's identity provider
+            returned an error at 08:14 – reason code <code>FEDERATION_ERROR</code>. Its health check shows an expired
+            certificate since yesterday. Next step: ask the customer's IT to renew it; a test link for them is ready.</p>
+          <p class="chat-note">Built-in MCP server: support asks in plain language from an AI assistant such as Claude –
+            read-only, limited to the person's role, every call audited.</p>
+        </div>
+        <div>
+          <h3>Also on board</h3>
+          <ul class="checks">
+            <li><strong>Sign-in diagnostics</strong><span>Every sign-in leaves a trace with reason codes; the error page shows a
+              correlation ID, so support finds the cause in seconds.</span></li>
+            <li><strong>Ready for AI agents</strong><span>Your teams can publish their own MCP servers – dynamic client
+              registration and resource indicators are part of the standard set.</span></li>
+            <li><strong>Developer self-service</strong><span>Teams register apps from templates, rotate secrets, get
+              quickstart code and test tokens – admins are needed only for exceptions.</span></li>
+            <li><strong>Test automation built in</strong><span>End-to-end tests sign in flagged test users without a login
+              screen – safely switched off in production.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <ul class="chips" aria-label="Standards">
+        <li>OpenID Connect</li><li>OAuth security best practice</li><li>PKCE</li><li>PAR</li><li>DPoP</li>
+        <li>Token exchange</li><li>Passkeys</li><li>MCP</li><li>Admin API</li>
+        <li>Sized for 500,000+ users</li>
+      </ul>
+
+      <div class="note">
+        <p><strong>Facing a B2C migration?</strong> We're happy to walk you through a live demo and check together whether
+          TheIdP fits your applications – <a href="#contact">get in touch</a>.</p>
       </div>
     </div>
   </section>
@@ -258,12 +370,12 @@
     <div class="wrap split">
       <div>
         <span class="eyebrow">Your benefits</span>
-        <h2>One contact who knows your project</h2>
+        <h2>Direct contacts who know your project</h2>
         <p class="lead">As an owner-managed engineering office in Schwarzach near Nuremberg, IMP combines many years of experience
           in professional software development with short lines of communication and personal support.</p>
       </div>
       <ul class="checks">
-        <li><strong>Personal and direct</strong><span>No call center, no changing project managers – you always talk to the developer himself.</span></li>
+        <li><strong>Personal and direct</strong><span>No call center, no changing project managers – you always talk directly to the people who build your software.</span></li>
         <li><strong>Tailor-made solutions</strong><span>Software that follows your workflows – not the other way around.</span></li>
         <li><strong>Engineering-grade quality</strong><span>Automated tests, version control and documentation ensure software that runs reliably and stays maintainable.</span></li>
         <li><strong>Modern, proven technology</strong><span>Microsoft .NET, Azure and open standards – future-proof and widely supported.</span></li>
@@ -276,7 +388,7 @@
     <div class="wrap">
       <div class="contact">
         <div>
-          <h2>Tell me about your project.</h2>
+          <h2>Tell us about your project.</h2>
           <p>A short call or an e-mail is all it takes. The initial consultation is free and without obligation –
             even if your idea is still in its early stages.</p>
         </div>
