@@ -209,6 +209,7 @@ section.dark .checks span { color: #b7c0d1; }
 .shot figcaption { margin-top: 14px; font-size: .9rem; color: var(--muted); text-align: center; }
 
 /* Identity Provider */
+.idp-video video { display: block; width: 100%; height: auto; border-radius: var(--radius); background: #141a2b; box-shadow: 0 20px 50px -20px rgba(16, 24, 48, .45); }
 .status-pill {
   display: inline-block; margin-top: 6px; padding: 4px 14px; border-radius: 999px;
   background: #fff; border: 1px solid var(--blue-light); color: var(--blue); font-size: .85rem; font-weight: 600;
