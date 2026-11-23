@@ -45,30 +45,14 @@
         "makesOffer": { "@type": "Offer", "itemOffered": { "@id": "https://ing-proepster.de/#theidp" } }
       },
       {
-        "@type": "SoftwareApplication",
+        "@type": "Service",
         "@id": "https://ing-proepster.de/#theidp",
-        "name": "TheIdP",
+        "name": "Identity Provider als Auftragsentwicklung (Projekt TheIdP)",
+        "serviceType": "Entwicklung, Anpassung, Migration und Einrichtung eines Identity Providers im Kundenauftrag",
         "url": "https://ing-proepster.de/de/#identitaet",
-        "applicationCategory": "SecurityApplication",
-        "applicationSubCategory": "Identity Provider / Customer Identity and Access Management (CIAM)",
-        "operatingSystem": "Docker, Kubernetes, Azure, AWS, Google Cloud, On-Premises",
-        "description": "Enterprise Identity Provider für Kunden-, Partner- und API-Zugriffe: OpenID Connect und OAuth 2.0, Token Exchange zwischen APIs (RFC 8693), Passkeys und MFA, Föderation mit Entra ID und anderen OIDC-Providern, selbst gehostet mit Failover über mehrere Standorte. Direkter Ersatz für Azure AD B2C mit B2C-kompatiblen Claims.",
-        "featureList": [
-          "Migration von Azure AD B2C ohne Umbau der Anwendungen",
-          "Token Exchange zwischen APIs (RFC 8693) mit Delegationsketten",
-          "B2B-Föderation pro Kunde über Home Realm Discovery",
-          "B2C-Konten mit Passkeys, Authenticator-App und E-Mail-Code",
-          "Login-Flows als Code statt Custom-Policy-XML",
-          "Self-Hosting mit Failover auf einen zweiten Standort, auch bei einem anderen Cloud-Anbieter",
-          "Auditierte, zeitlich begrenzte Support-Impersonation",
-          "Anmeldediagnose mit Reason Codes und Correlation IDs",
-          "Eingebauter MCP-Server für KI-Assistenten"
-        ],
-        "softwareHelp": { "@type": "CreativeWork", "url": "https://ing-proepster.de/de/#kontakt" },
-        "offers": { "@type": "Offer", "availability": "https://schema.org/PreOrder", "description": "Pilotkunden willkommen" },
-        "author": { "@id": "https://ing-proepster.de/#organization" },
+        "description": "Individuelle Umsetzung eines Identity Providers für Kunden-, Partner- und API-Zugriffe im Kundenauftrag: OpenID Connect und OAuth 2.0, Token Exchange zwischen APIs (RFC 8693), Passkeys und MFA, Föderation mit Entra ID und anderen OIDC-Providern, Einrichtung beim Kunden mit Failover über mehrere Standorte. Migration von Azure AD B2C mit B2C-kompatiblen Claims.",
         "provider": { "@id": "https://ing-proepster.de/#organization" },
-        "inLanguage": ["de", "en"]
+        "areaServed": ["DE", "AT", "CH", "EU"]
       }
     ]
   }
@@ -117,7 +101,7 @@
     <div class="wrap">
       <div class="pills">
         <a class="pill" href="#ki"><b>Neu</b> Software, die sich mit Ihrer Hilfe selbst verbessert →</a>
-        <a class="pill" href="#identitaet"><b>Neu</b> TheIdP – ein Identity Provider für Kunden, Partner und APIs →</a>
+        <a class="pill" href="#identitaet"><b>Neu</b> Ihr eigener Identity Provider für Kunden, Partner und APIs – für Sie umgesetzt →</a>
       </div>
       <span class="eyebrow">Software für kleine und mittlere Unternehmen</span>
       <h1>Software, die Ihren Betrieb entlastet.</h1>
@@ -213,12 +197,14 @@
   <section id="identitaet" class="alt">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Produkt · Identity Provider</span>
-        <h2>Eine Anmeldung für Kunden, Partner und APIs – betrieben, wo Sie es möchten</h2>
-        <p class="lead"><strong>TheIdP</strong> ist ein Identity Provider für Unternehmen auf Basis offener Standards:
-          Endkunden und Geschäftskunden in einem System, sicherer Token Exchange zwischen Ihren APIs, Login-Flows als Code,
-          betrieben in jeder Cloud oder on-premises. Sie lösen Azure AD B2C ab, und Entra External ID passt nicht? Ihre
-          Anwendungen laufen weiter – für die meisten ist der Wechsel nur eine neue Authority.</p>
+        <span class="eyebrow">Auftragsentwicklung · Identity Provider</span>
+        <h2>Eine Anmeldung für Kunden, Partner und APIs – für Sie umgesetzt, betrieben, wo Sie es möchten</h2>
+        <p class="lead">Wir entwickeln und richten in Ihrem Auftrag einen Identity Provider auf Basis offener Standards ein –
+          zugeschnitten auf Ihre Anwendungen: Endkunden und Geschäftskunden in einem System, sicherer Token Exchange zwischen
+          Ihren APIs, Login-Flows als Code, betrieben in jeder Cloud oder on-premises. Grundlage sind die Vorarbeiten aus
+          unserem Identity-Projekt <strong>TheIdP</strong> – das spart Zeit, ohne dass Sie ein Standardprodukt kaufen müssen.
+          Sie lösen Azure AD B2C ab, und Entra External ID passt nicht? Wir übernehmen die Migration – Ihre Anwendungen laufen
+          weiter, für die meisten ist der Wechsel nur eine neue Authority.</p>
       </div>
 
       <div class="grid">
@@ -228,7 +214,7 @@
           </div>
           <h3>Umstieg ohne Umbau Ihrer Anwendungen</h3>
           <p>Login-Flows werden wie B2C-Policies über die Authority-URL gewählt, die Claims sind B2C-kompatibel, App-Registrierungen
-            funktionieren wie in Entra ID. Für die meisten Anwendungen ist der Wechsel eine neue Authority – kein neues Projekt.</p>
+            funktionieren wie in Entra ID. Für die meisten Anwendungen ist der Wechsel eine neue Authority – den Umstieg planen und begleiten wir.</p>
           <div class="tags">B2C-kompatible Claims · App-Registrierungen wie Entra ID · OpenID Connect</div>
         </article>
 
@@ -258,7 +244,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
           </div>
           <h3>Anpassbar – in Code statt XML</h3>
-          <p>Login-Flows sind echter Code statt Custom-Policy-XML – versioniert, getestet und ausgeliefert wie jede Software. Branding und Kampagnen, Übersetzungen,
+          <p>Login-Flows sind echter Code statt Custom-Policy-XML – wir passen sie an Ihre Abläufe an, versioniert, getestet und ausgeliefert wie jede Software. Branding und Kampagnen, Übersetzungen,
             E-Mail-Vorlagen und Claim-Mappings pflegen Sie in der Konsole; Erweiterungspunkte erlauben Betrugsprüfungen oder
             Step-up-Regeln.</p>
           <div class="tags">Flows als Code · Kampagnen · Erweiterungspunkte</div>
@@ -269,7 +255,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 6.5h.01M6 17.5h.01M11 6.5h7M11 17.5h7"/></svg>
           </div>
           <h3>Ausfallsicher und selbst betrieben</h3>
-          <p>Betreiben Sie ihn selbst – im eigenen Rechenzentrum oder in jeder Cloud. Ein zweiter Standort, auch bei einem
+          <p>Wir richten ihn dort ein, wo Sie ihn betreiben möchten – im eigenen Rechenzentrum oder in jeder Cloud. Ein zweiter Standort, auch bei einem
             anderen Cloud-Anbieter, bleibt synchron; umgeschaltet wird per DNS und einem Klick, die Benutzer arbeiten weiter.</p>
           <div class="tags">Zwei Standorte · Azure, AWS, Google Cloud · eigenes Rechenzentrum · kein Lock-in</div>
         </article>
@@ -325,8 +311,9 @@
       </figure>
 
       <div class="note">
-        <p><strong>Planen Sie eine neue Anmeldung, wollen Sie Identity Provider zusammenführen oder steht eine B2C-Migration an?</strong> Gerne zeigen wir Ihnen TheIdP in einer Live-Demo und wir
-          prüfen gemeinsam, ob er zu Ihren Anwendungen passt – <a href="#kontakt">sprechen Sie uns an</a>.</p>
+        <p><strong>Planen Sie eine neue Anmeldung, wollen Sie Identity Provider zusammenführen oder steht eine B2C-Migration an?</strong> Gerne zeigen wir Ihnen in einer Live-Demo,
+          was wir bereits umgesetzt haben, und klären gemeinsam, wie ein Identity Provider für Ihre Anwendungen aussehen soll.
+          Sie erhalten ein Konzept und ein Angebot für die Umsetzung als Projekt – <a href="#kontakt">sprechen Sie uns an</a>.</p>
       </div>
     </div>
   </section>

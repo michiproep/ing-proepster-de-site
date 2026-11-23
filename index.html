@@ -45,30 +45,14 @@
         "makesOffer": { "@type": "Offer", "itemOffered": { "@id": "https://ing-proepster.de/#theidp" } }
       },
       {
-        "@type": "SoftwareApplication",
+        "@type": "Service",
         "@id": "https://ing-proepster.de/#theidp",
-        "name": "TheIdP",
+        "name": "Identity provider as commissioned development (project TheIdP)",
+        "serviceType": "Development, customization, migration and setup of an identity provider on behalf of the client",
         "url": "https://ing-proepster.de/#identity",
-        "applicationCategory": "SecurityApplication",
-        "applicationSubCategory": "Identity provider / Customer identity and access management (CIAM)",
-        "operatingSystem": "Docker, Kubernetes, Azure, AWS, Google Cloud, on-premises",
-        "description": "Enterprise identity provider for customer, partner and API access: OpenID Connect and OAuth 2.0, token exchange between APIs (RFC 8693), passkeys and MFA, federation with Entra ID and other OIDC providers, self-hosted with multi-site failover. Drop-in alternative to Azure AD B2C with B2C-compatible claims.",
-        "featureList": [
-          "Migration path from Azure AD B2C without rewriting applications",
-          "Token exchange between APIs (RFC 8693) with delegation chains",
-          "B2B federation per customer via home realm discovery",
-          "B2C local accounts with passkeys, authenticator app and email code",
-          "Login flows as code instead of custom-policy XML",
-          "Self-hosting with second-site failover across cloud providers",
-          "Audited, time-limited support impersonation",
-          "Sign-in diagnostics with reason codes and correlation IDs",
-          "Built-in MCP server for AI assistants"
-        ],
-        "softwareHelp": { "@type": "CreativeWork", "url": "https://ing-proepster.de/#contact" },
-        "offers": { "@type": "Offer", "availability": "https://schema.org/PreOrder", "description": "Pilot customers welcome" },
-        "author": { "@id": "https://ing-proepster.de/#organization" },
+        "description": "Custom implementation of an identity provider for customer, partner and API access, delivered as a commissioned project: OpenID Connect and OAuth 2.0, token exchange between APIs (RFC 8693), passkeys and MFA, federation with Entra ID and other OIDC providers, set up at the client's site with multi-site failover. Migration from Azure AD B2C with B2C-compatible claims.",
         "provider": { "@id": "https://ing-proepster.de/#organization" },
-        "inLanguage": ["en", "de"]
+        "areaServed": ["DE", "AT", "CH", "EU"]
       }
     ]
   }
@@ -116,7 +100,7 @@
     <div class="wrap">
       <div class="pills">
         <a class="pill" href="#ai"><b>New</b> Software that improves itself – with your help →</a>
-        <a class="pill" href="#identity"><b>New</b> TheIdP – one identity provider for customers, partners and APIs →</a>
+        <a class="pill" href="#identity"><b>New</b> Your own identity provider for customers, partners and APIs – built for you →</a>
       </div>
       <span class="eyebrow">Software for small and medium-sized businesses</span>
       <h1>Software that takes the load off your business.</h1>
@@ -213,12 +197,14 @@
   <section id="identity" class="alt">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Product · Identity Provider</span>
-        <h2>One sign-in for customers, partners and APIs – run wherever you want</h2>
-        <p class="lead"><strong>TheIdP</strong> is an enterprise identity provider built on open standards: consumers and
-          business customers in one system, secure token exchange between your APIs, login flows as code, and hosting in
-          any cloud or on-premises. Moving off Azure AD B2C, or Entra External ID doesn't fit? Your apps keep working –
-          for most of them the switch is just a new authority.</p>
+        <span class="eyebrow">Commissioned development · Identity Provider</span>
+        <h2>One sign-in for customers, partners and APIs – built for you, run wherever you want</h2>
+        <p class="lead">On your behalf, we build and set up an identity provider on open standards, tailored to your
+          applications: consumers and business customers in one system, secure token exchange between your APIs, login flows
+          as code, and hosting in any cloud or on-premises. The groundwork comes from our identity project
+          <strong>TheIdP</strong> – which saves time without you having to buy an off-the-shelf product. Moving off
+          Azure AD B2C, or Entra External ID doesn't fit? We handle the migration – your apps keep working; for most of them
+          the switch is just a new authority.</p>
       </div>
 
       <div class="grid">
@@ -228,7 +214,7 @@
           </div>
           <h3>Migration without rewriting your apps</h3>
           <p>Login flows selected by authority URL like B2C policies, B2C-compatible claims, app registrations in the
-            style of Entra ID. For most applications the switch is a new authority – not a new project.</p>
+            style of Entra ID. For most applications the switch is a new authority – we plan and guide the migration.</p>
           <div class="tags">B2C-compatible claims · Entra-style app registrations · OpenID Connect</div>
         </article>
 
@@ -257,7 +243,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
           </div>
           <h3>Adaptable – in code, not in XML</h3>
-          <p>Login flows are real code instead of custom-policy XML – versioned, tested and released like any software. Branding and campaigns, translations, email
+          <p>Login flows are real code instead of custom-policy XML – we adapt them to your processes, versioned, tested and released like any software. Branding and campaigns, translations, email
             templates and claim mappings are maintained in the console; hooks allow fraud checks or step-up rules.</p>
           <div class="tags">Flows as code · campaigns · extension hooks</div>
         </article>
@@ -267,7 +253,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 6.5h.01M6 17.5h.01M11 6.5h7M11 17.5h7"/></svg>
           </div>
           <h3>Failover and self-hosting</h3>
-          <p>Run it yourself – in your data centre or any cloud. A second site, even with another cloud provider, stays in
+          <p>We set it up wherever you want to run it – in your data centre or any cloud. A second site, even with another cloud provider, stays in
             sync; switching over is a DNS change and one click, and users keep working.</p>
           <div class="tags">Two sites · Azure, AWS, Google Cloud · on-premises · no lock-in</div>
         </article>
@@ -322,8 +308,9 @@
       </figure>
 
       <div class="note">
-        <p><strong>Planning a new sign-in, consolidating identity providers or facing a B2C migration?</strong> We're happy to walk you through a live demo and check together whether
-          TheIdP fits your applications – <a href="#contact">get in touch</a>.</p>
+        <p><strong>Planning a new sign-in, consolidating identity providers or facing a B2C migration?</strong> We're happy to show you in a live demo what we
+          have already built and work out together what an identity provider for your applications should look like. You get
+          a concept and a quote for delivering it as a project – <a href="#contact">get in touch</a>.</p>
       </div>
     </div>
   </section>
